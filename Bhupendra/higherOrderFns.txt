@@ -1,0 +1,1 @@
+Discussed some Array methods like Map, Filter, Reduce, Sort.. and how to read syntax from docs and make use of examples from docs. 
