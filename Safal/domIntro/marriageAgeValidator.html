@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marriage Age Validator</title>
+  </head>
+  <body>
+    <div>
+      <select id="gender">
+        <option value="">Choose Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <input id="year" type="text" placeholder="Year" />
+      <button onclick="checkValidAgeToMary()">Check</button>
+    </div>
+
+    <script type="text/javascript">
+      function checkValidAgeToMary() {
+        var gender = document.querySelector("#gender").value;
+        var year = document.querySelector("#year").value;
+        validation(gender, year)
+          ? alert("you can marry")
+          : alert("you should wait");
+      }
+
+      function validation(gender, year) {
+        switch (gender) {
+          case "male":
+            return findAge(year) > 21 ? 1 : 0;
+          case "female":
+            return findAge(year) > 18 ? 1 : 0;
+        }
+      }
+
+      function findAge(year) {
+        const time = new Date(Date.now());
+        var currentYear = time.getUTCFullYear();
+        return currentYear - year;
+      }
+    </script>
+  </body>
+</html>
