@@ -5,10 +5,11 @@ function Fruits(name, quantity) {
   this.printName = function() {
     console.log(this.name)
   }
+
 }
 
-
 const apple = new Fruits("apple", 20)
+
 apple.printName()
 
 const getQuantity = function () {
@@ -24,6 +25,7 @@ const incrQtyByX = function(x) {
 const raiseQty = incrQtyByX.bind(apple)
 raiseQty(4)
 
+
 incrQtyByX.call(apple, 3)
 incrQtyByX.apply(apple, [2])
 
@@ -38,3 +40,12 @@ function printName() {
 }
 
 printName.call(obj)
+
+
+function test() {
+  this.name = "apple"
+  console.log("this", this, this.name)
+}
+
+test()
+
